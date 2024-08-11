@@ -2,7 +2,7 @@ pipeline {
     agent any
 
 environment{
-  PATH=${PATH}:/opt/maven/bin"
+  PATH="${PATH}:/opt/maven/bin"
 
     stages {
         stage('CLONE') {
@@ -13,12 +13,10 @@ environment{
 
 stage('BUILD') {
      steps {
-           echo "sh mvn clean package"
+             "sh mvn clean package"
 
-            }
-
-        }
+          }
+       }
     }
-
 }
 
