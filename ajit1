@@ -1,0 +1,24 @@
+pipeline {
+    agent any
+
+environment{
+  PATH=${PATH}:/opt/maven/bin"
+
+    stages {
+        stage('CLONE') {
+            steps {
+               git branch: 'main', credentialsId: 'Github-login', url: 'https://github.com/chauhanqwe/jenkins.git'
+            }
+         } 
+
+stage('BUILD') {
+     steps {
+           echo "sh mvn clean package"
+
+            }
+
+        }
+    }
+
+}
+
